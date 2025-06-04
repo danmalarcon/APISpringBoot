@@ -18,8 +18,8 @@ public class Teacher {
     private Integer id;
 
     @OneToOne
-    @JoinColumn(name = "id_user")
-    @JsonBackReference(value = "user-teacher")
+    @JoinColumn(name = "fk_user")
+    @JsonManagedReference(value = "user-teacher")
     private User user;
     private String specialty;
 

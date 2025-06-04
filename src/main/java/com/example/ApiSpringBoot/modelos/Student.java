@@ -17,11 +17,12 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_student")
     private Integer id;
 
     @OneToOne
-    @JoinColumn(name = "id_user")
-    @JsonBackReference(value = "user-student")
+    @JoinColumn(name = "fk_user")
+    @JsonManagedReference(value = "user-student")
     private User user;
     private int grade;
 
